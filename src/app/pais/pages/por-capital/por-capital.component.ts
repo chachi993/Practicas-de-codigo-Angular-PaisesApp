@@ -21,10 +21,7 @@ export class PorCapitalComponent {
    this.termino = termino; //el del argumento
 
    this.paisService.buscarCapital(this.termino)
-   .subscribe(
-    (paises) => {
-      this.paises = paises;
-    },
+   .subscribe((paises) => { this.paises = paises },
     (err) => {
       this.hayErrors= true;
       this.paises = []; //hay un error. esos no son los paises que hay que mostrar

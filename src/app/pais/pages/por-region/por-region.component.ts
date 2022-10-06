@@ -27,7 +27,7 @@ activarRegion(region: string) {
 //   return (region === this.regionActiva) ?  'btn-primary' : 'btn-outline-primary'
 //}
 this.paisService.buscarRegion(region)
-.subscribe(paises => this.paises = paises)
+.subscribe(paises => this.paises = paises )
 }
 
 }

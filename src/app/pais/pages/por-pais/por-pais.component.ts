@@ -26,11 +26,7 @@ export class PorPaisComponent  {
    this.termino = termino; //el del argumento
 
    this.paisService.buscarPais(this.termino)
-   .subscribe(
-    (paises) => {
-      console.log(paises);
-      this.paises = paises;
-    },
+   .subscribe((paises) => { this.paises = paises },
     (err) => {
       this.hayErrors= true;
       this.paises = []; //hay un error. esos no son los paises que hay que mostrar
@@ -41,8 +37,7 @@ export class PorPaisComponent  {
     this.hayErrors = false;
     this.termino = termino;
     this.paisService.buscarPais(termino)
-    .subscribe(
-      paises => this.paisesSugeridos = paises.splice(0,5),
+    .subscribe(paises => this.paisesSugeridos = paises.splice(0,5),
       (err) => this.paisesSugeridos = []
       );
   }
